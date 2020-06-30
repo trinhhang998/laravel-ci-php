@@ -71,11 +71,11 @@ ENV PATH ./vendor/bin:/composer/vendor/bin:$PATH
 ENV COMPOSER_ALLOW_SUPERUSER 1
 RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
 
+# Install PHP_CodeSniffer
+RUN composer global require "squizlabs/php_codesniffer=*"
+
 # Install Laravel Envoy 
 RUN composer global require laravel/envoy
-
-# Install PHPCS
-RUN composer global require "squizlabs/php_codesniffer=*"
 
 # Cleanup dev dependencies
 RUN apk del -f .build-deps
