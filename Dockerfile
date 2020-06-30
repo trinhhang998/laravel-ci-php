@@ -62,8 +62,7 @@ RUN docker-php-ext-install \
     pdo_sqlite \
     pcntl \
     tokenizer \
-    xml \
-    zip
+    xml 
 
 # Install composer
 ENV COMPOSER_HOME /composer
